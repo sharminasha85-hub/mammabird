@@ -2,7 +2,14 @@ import React from 'react';
 import { Heart, Mail, ShieldCheck, Feather, Sparkles } from 'lucide-react';
 import BrandLogo from './BrandLogo';
 
-export default function Footer() {
+export default function Footer({ onNavigate }) {
+  const handleNav = (page, param = null) => {
+    if (onNavigate) {
+      onNavigate(page, param);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
   return (
     <footer
       style={{
@@ -41,25 +48,36 @@ export default function Footer() {
             <h4 style={{ fontSize: '0.95rem', fontWeight: 700, color: 'var(--color-taupe-dark)', marginBottom: '18px', textTransform: 'uppercase', letterSpacing: '1px' }}>
               Explore
             </h4>
-            <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '10px', fontSize: '0.88rem', color: 'var(--color-taupe)' }}>
-              <li><a href="#story" className="footer-link">Our Story & Craft</a></li>
-              <li><a href="#ages" className="footer-link">Age Guide (0–10Y)</a></li>
-              <li><a href="#lookbook" className="footer-link">Capsule Preview</a></li>
-              <li><a href="#hero" className="footer-link">Back to Top</a></li>
+            <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '10px', fontSize: '0.88rem', color: 'var(--color-taupe)', padding: 0 }}>
+              <li>
+                <button onClick={() => handleNav('shop')} style={{ background: 'transparent', border: 'none', color: 'var(--color-pink-deep)', fontWeight: 700, cursor: 'pointer', padding: 0 }}>
+                  🛍️ Shop All Collection
+                </button>
+              </li>
+              <li>
+                <button onClick={() => handleNav('home')} style={{ background: 'transparent', border: 'none', color: 'var(--color-taupe)', cursor: 'pointer', padding: 0 }}>
+                  Our Story & Craft
+                </button>
+              </li>
+              <li>
+                <button onClick={() => handleNav('account')} style={{ background: 'transparent', border: 'none', color: 'var(--color-taupe)', cursor: 'pointer', padding: 0 }}>
+                  My Account & Orders
+                </button>
+              </li>
             </ul>
           </div>
 
           {/* Age Collections */}
           <div>
             <h4 style={{ fontSize: '0.95rem', fontWeight: 700, color: 'var(--color-taupe-dark)', marginBottom: '18px', textTransform: 'uppercase', letterSpacing: '1px' }}>
-              Age Stages
+              Shop by Age
             </h4>
-            <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '10px', fontSize: '0.88rem', color: 'var(--color-taupe)' }}>
-              <li><a href="#lookbook" className="footer-link">0–12M Nestling Baby</a></li>
-              <li><a href="#lookbook" className="footer-link">1–3Y Toddler Explorer</a></li>
-              <li><a href="#lookbook" className="footer-link">4–6Y Little Chirps</a></li>
-              <li><a href="#lookbook" className="footer-link">7–10Y Junior Aviator</a></li>
-              <li><a href="#lookbook" className="footer-link">Mommy & Me Sets</a></li>
+            <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '10px', fontSize: '0.88rem', color: 'var(--color-taupe)', padding: 0 }}>
+              <li><button onClick={() => handleNav('shop')} style={{ background: 'transparent', border: 'none', color: 'var(--color-taupe)', cursor: 'pointer', padding: 0 }}>0–12M Nestling Baby</button></li>
+              <li><button onClick={() => handleNav('shop')} style={{ background: 'transparent', border: 'none', color: 'var(--color-taupe)', cursor: 'pointer', padding: 0 }}>1–3Y Toddler Explorer</button></li>
+              <li><button onClick={() => handleNav('shop')} style={{ background: 'transparent', border: 'none', color: 'var(--color-taupe)', cursor: 'pointer', padding: 0 }}>4–6Y Little Chirps</button></li>
+              <li><button onClick={() => handleNav('shop')} style={{ background: 'transparent', border: 'none', color: 'var(--color-taupe)', cursor: 'pointer', padding: 0 }}>7–10Y Junior Aviator</button></li>
+              <li><button onClick={() => handleNav('shop')} style={{ background: 'transparent', border: 'none', color: 'var(--color-taupe)', cursor: 'pointer', padding: 0 }}>Mommy & Me Sets</button></li>
             </ul>
           </div>
 

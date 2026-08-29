@@ -3,7 +3,7 @@ import gsap from 'gsap';
 import { Heart, Sparkles, Clock, ShieldCheck, Feather, ArrowDown, CheckCircle2, Leaf, SunMedium } from 'lucide-react';
 import BrandLogo from './BrandLogo';
 
-export default function HeroSection() {
+export default function HeroSection({ onNavigate }) {
   const heroRef = useRef(null);
   const titleRef = useRef(null);
   const imageRef = useRef(null);
@@ -290,23 +290,45 @@ export default function HeroSection() {
             {/* Action Buttons & Brand Pillars */}
             <div className="hero-feature-pills" style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
               <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap' }}>
+                <button
+                  onClick={() => (onNavigate ? onNavigate('shop') : (window.location.hash = '#shop'))}
+                  className="btn-primary"
+                  style={{
+                    padding: '14px 30px',
+                    backgroundColor: 'var(--color-pink-deep)',
+                    color: '#FFFFFF',
+                    border: 'none',
+                    borderRadius: 'var(--radius-full)',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '10px',
+                    fontSize: '0.98rem',
+                    fontWeight: 700,
+                    cursor: 'pointer',
+                    boxShadow: '0 4px 18px rgba(184, 114, 108, 0.35)',
+                    transition: 'var(--transition-fast)',
+                  }}
+                >
+                  <ShoppingBag size={18} />
+                  <span>Shop Now • VIP 25% Off</span>
+                </button>
+
                 <a
                   href="#lookbook"
                   onClick={handleScrollToLookbook}
-                  className="btn-primary"
-                  style={{ padding: '14px 28px' }}
+                  className="btn-secondary"
+                  style={{
+                    padding: '14px 24px',
+                    borderRadius: 'var(--radius-full)',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '8px',
+                    fontSize: '0.92rem',
+                    fontWeight: 600,
+                  }}
                 >
                   <Sparkles size={16} />
-                  <span>Preview Collection</span>
-                </a>
-                <a
-                  href="#story"
-                  onClick={handleScrollToStory}
-                  className="btn-secondary"
-                  style={{ padding: '14px 24px' }}
-                >
-                  <span>Our Story & Philosophy</span>
-                  <ArrowDown size={15} />
+                  <span>Preview Capsules</span>
                 </a>
               </div>
 

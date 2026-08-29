@@ -93,7 +93,7 @@ const AGE_STAGES = [
   },
 ];
 
-export default function AgesGuide() {
+export default function AgesGuide({ onNavigate }) {
   const [activeStage, setActiveStage] = useState(0);
   const sectionRef = useRef(null);
   const cardsContainerRef = useRef(null);
@@ -282,8 +282,8 @@ export default function AgesGuide() {
                   </div>
                 </div>
 
-                <a
-                  href="#lookbook"
+                <button
+                  onClick={() => onNavigate && onNavigate('shop')}
                   style={{
                     fontSize: '0.82rem',
                     fontWeight: 700,
@@ -291,11 +291,15 @@ export default function AgesGuide() {
                     display: 'flex',
                     alignItems: 'center',
                     gap: '4px',
+                    background: 'transparent',
+                    border: 'none',
+                    cursor: 'pointer',
+                    padding: 0,
                   }}
                 >
-                  <span>Preview Collection</span>
+                  <span>Shop This Milestone</span>
                   <span>→</span>
-                </a>
+                </button>
               </div>
             </div>
 

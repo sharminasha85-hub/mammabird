@@ -89,7 +89,7 @@ const CATEGORIES = [
   { id: 'mommy-me', label: 'Mommy & Me' },
 ];
 
-export default function LookbookShowcase() {
+export default function LookbookShowcase({ onNavigate }) {
   const [activeCategory, setActiveCategory] = useState('all');
   const [selectedProduct, setSelectedProduct] = useState(null);
   const sectionRef = useRef(null);
@@ -454,13 +454,25 @@ export default function LookbookShowcase() {
                   </p>
                 </div>
 
-                <button
-                  onClick={() => setSelectedProduct(null)}
-                  className="btn-primary"
-                  style={{ width: '100%', textAlign: 'center' }}
-                >
-                  <Feather size={16} /> Back to Lookbook
-                </button>
+                <div style={{ display: 'flex', gap: '10px' }}>
+                  <button
+                    onClick={() => {
+                      setSelectedProduct(null);
+                      if (onNavigate) onNavigate('shop');
+                    }}
+                    className="btn-primary"
+                    style={{ flex: 1, textAlign: 'center', padding: '12px' }}
+                  >
+                    <span>🛍️ Shop in Store (25% Off)</span>
+                  </button>
+                  <button
+                    onClick={() => setSelectedProduct(null)}
+                    className="btn-secondary"
+                    style={{ padding: '12px 18px' }}
+                  >
+                    Close
+                  </button>
+                </div>
               </div>
             </div>
           </div>
