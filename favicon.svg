@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <circle cx="50" cy="50" r="46" fill="#FAF7F2" stroke="#E6D7CB" stroke-width="2"/>
+  <!-- Mother Bird -->
+  <path d="M35 48 C30 44 26 46 22 47 C24 43 28 38 34 38 C42 38 46 42 48 48 C42 50 37 50 35 48 Z" fill="#DDA5A5"/>
+  <path d="M48 48 C51 45 54 44 58 46 C57 48 55 52 52 53 C49 53 46 51 48 48 Z" fill="#DDA5A5"/>
+  <!-- Mother Bird Head -->
+  <circle cx="48" cy="42" r="8" fill="#DDA5A5"/>
+  <!-- Mother Bird Eye (sleeping/happy) -->
+  <path d="M46 42 Q49 45 51 42" stroke="#685044" stroke-width="1.2" stroke-linecap="round" fill="none"/>
+  <!-- Mother Beak -->
+  <polygon points="55,42 58,44 55,46" fill="#685044"/>
+  
+  <!-- Baby Bird -->
+  <circle cx="64" cy="46" r="5" fill="#F3D2C9"/>
+  <path d="M64 48 C61 52 58 52 56 50 C58 48 62 47 64 48 Z" fill="#F3D2C9"/>
+  <path d="M63 46 Q65 48 66 46" stroke="#685044" stroke-width="1" stroke-linecap="round" fill="none"/>
+  <polygon points="61,45 58,46 61,47" fill="#685044"/>
+  
+  <!-- Little Heart -->
+  <path d="M57 33 C57 31 55 30 53.5 31.5 C52 30 50 31 50 33 C50 35.5 53.5 38 53.5 38 C53.5 38 57 35.5 57 33 Z" fill="#DDA5A5"/>
+  
+  <!-- Monogram MB Silhouette Accent -->
+  <text x="50" y="82" font-family="'Cormorant Garamond', Georgia, serif" font-size="28" font-weight="700" fill="#7D6556" text-anchor="middle" letter-spacing="1">MB</text>
+  <circle cx="50" cy="88" r="1.5" fill="#DDA5A5"/>
+</svg>
