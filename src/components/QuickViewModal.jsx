@@ -3,6 +3,7 @@ import { X, Heart, ShoppingBag, Star, Check, ShieldCheck, Sparkles, ArrowRight, 
 import { useProducts } from '../context/ProductContext';
 import { useCart } from '../context/CartContext';
 import { useWishlist } from '../context/WishlistContext';
+import { getAssetUrl } from '../utils/assetUrl';
 
 export default function QuickViewModal({ onNavigate }) {
   const { quickViewProduct, closeQuickView } = useProducts();
@@ -29,7 +30,8 @@ export default function QuickViewModal({ onNavigate }) {
 
   const product = quickViewProduct;
   const isFavorited = isInWishlist(product._id || product.id);
-  const images = product.images && product.images.length > 0 ? product.images : [product.featuredImage || '/images/hero.jpg'];
+  const rawImages = product.images && product.images.length > 0 ? product.images : [product.featuredImage || 'images/hero.jpg'];
+  const images = rawImages.map(img => getAssetUrl(img));
 
   const handleAddToCart = () => {
     addToCart(product, selectedSize, selectedColor, quantity, true);

@@ -3,6 +3,7 @@ import { Heart, ShoppingBag, Eye, Star, Sparkles, Check } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 import { useWishlist } from '../context/WishlistContext';
 import { useProducts } from '../context/ProductContext';
+import { getAssetUrl } from '../utils/assetUrl';
 
 export default function ProductCard({ product, onNavigate }) {
   const { addToCart } = useCart();
@@ -60,7 +61,7 @@ export default function ProductCard({ product, onNavigate }) {
         }}
       >
         <img
-          src={product.featuredImage || product.images?.[0] || '/images/hero.jpg'}
+          src={getAssetUrl(product.featuredImage || product.images?.[0] || 'images/hero.jpg')}
           alt={product.name}
           style={{
             width: '100%',

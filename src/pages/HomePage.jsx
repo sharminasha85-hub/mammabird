@@ -6,6 +6,7 @@ import StoryPillars from '../components/StoryPillars';
 import LookbookShowcase from '../components/LookbookShowcase';
 import Footer from '../components/Footer';
 import { useProducts } from '../context/ProductContext';
+import { getAssetUrl } from '../utils/assetUrl';
 
 export default function HomePage({ onNavigate }) {
   const { updateFilter } = useProducts();
@@ -23,7 +24,7 @@ export default function HomePage({ onNavigate }) {
       range: '0 – 12 Months',
       title: 'Baby & Newborn',
       subtitle: 'Pure organic waffle rompers & cocoon swaddles',
-      image: '/images/baby.jpg',
+      image: getAssetUrl('images/baby.jpg'),
       badge: 'Stage 01',
     },
     {
@@ -31,7 +32,7 @@ export default function HomePage({ onNavigate }) {
       range: '1 – 3 Years',
       title: 'Toddler Fledglings',
       subtitle: 'Durable French washed linen dungarees & sets',
-      image: '/images/toddler.jpg',
+      image: getAssetUrl('images/toddler.jpg'),
       badge: 'Stage 02',
     },
     {
@@ -39,7 +40,7 @@ export default function HomePage({ onNavigate }) {
       range: '4 – 6 Years',
       title: 'Little Explorers',
       subtitle: 'Handcrafted botanical dresses & play sets',
-      image: '/images/little_kids.jpg',
+      image: getAssetUrl('images/little_kids.jpg'),
       badge: 'Stage 03',
     },
     {
@@ -47,7 +48,7 @@ export default function HomePage({ onNavigate }) {
       range: '7 – 10 Years',
       title: 'Junior Aviators',
       subtitle: 'Chunky cotton knits & tailored linen trousers',
-      image: '/images/big_kids.jpg',
+      image: getAssetUrl('images/big_kids.jpg'),
       badge: 'Stage 04',
     },
     {
@@ -55,7 +56,7 @@ export default function HomePage({ onNavigate }) {
       range: 'Mother & Child',
       title: 'Mommy & Me Sets',
       subtitle: 'Matching keepsake heirloom tiered dresses',
-      image: '/images/mommy_me.jpg',
+      image: getAssetUrl('images/mommy_me.jpg'),
       badge: 'Heirloom Special',
     },
   ];
